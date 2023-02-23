@@ -32,7 +32,8 @@ export const autoClockIn = async () => {
     const date = dayjs();
     const formatDate = date.format("YYYY-MM-DD");
     const isHoliday = await checkHoliday(formatDate);
-    if (isHoliday) console.log("今日は祝日です");
+    console.log(`本日は${formatDate}です`)
+    if (isHoliday) return console.log("祝日なので打刻はしません");
     try {
         const browser = await chromium.launch({
             headless: false, // ブラウザ動作
@@ -55,7 +56,8 @@ export const autoClockOut = async () => {
     const date = dayjs();
     const formatDate = date.format("YYYY-MM-DD");
     const isHoliday = await checkHoliday(formatDate);
-    if (isHoliday) console.log("今日は祝日です");
+    console.log(`本日は${formatDate}です`)
+    if (isHoliday) return console.log("祝日なので打刻はしません");
     try {
         const browser = await chromium.launch({
             headless: false, // ブラウザ動作
