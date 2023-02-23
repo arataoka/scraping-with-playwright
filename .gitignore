@@ -105,3 +105,6 @@ dist
 
 # google_secrets.json
 google_secrets.json
+
+# idea
+.idea
