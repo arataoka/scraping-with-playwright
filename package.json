@@ -13,6 +13,7 @@
     "nodemailer": "^6.7.8"
   },
   "dependencies": {
+    "dayjs": "^1.11.7",
     "dotenv": "^16.0.3",
     "google-auth-library": "^8.5.2",
     "google-spreadsheet": "^3.3.0",
