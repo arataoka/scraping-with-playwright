@@ -2,7 +2,7 @@ import {chromium} from "@playwright/test";
 import * as fs from "fs";
 import {Parser} from "json2csv"
 
-(async () => {
+export const getEmployeesByScraping = async () => {
     // tab
     try {
         const browser = await chromium.launch({
@@ -27,7 +27,8 @@ import {Parser} from "json2csv"
         console.log(array);  // [{name:"text"}, {name:"text"}]
         const csv = parser.parse(array)
         fs.writeFileSync("./text-data.csv", csv)
+        return array
     } catch (e) {
         console.error(e);
     }
-})()
+}
